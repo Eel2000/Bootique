@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bootique.Views.AboutPage">
+
+    <NavigationPage.HasNavigationBar>false</NavigationPage.HasNavigationBar>
+    
+    <StackLayout>
+        <Frame  Padding="0" Margin="0,-35,0,0" CornerRadius="35"
+               HeightRequest="350" WidthRequest="455" HasShadow="True" 
+                BackgroundColor="#40a7c5" 
+                IsClippedToBounds="True">
+            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Image Source="how.png" Aspect="Fill"/>
+            </Grid>
+        </Frame>
+
+        <Grid>
+            <Label FontFamily="Lobster-Regular" Padding="15" 
+                   LineBreakMode="WordWrap" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                <Label.Text>
+                    Alerte Santé est une application mobile developper dans le but;
+                de la realisation d'un travail de fin de cycle permettant d'envoyer
+                une alerte a un hopital, en cas  de probleme  de santé ou d'accident
+                de circulation.
+                </Label.Text>
+            </Label>
+        </Grid>
+
+        <Button x:Name="BtnAbon" Text="Mon Abonnement" CornerRadius="15" 
+                VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="DarkRed"
+                TextColor="White" Command="{Binding AbonnemantCommand}"/>
+    </StackLayout>
+</ContentPage>

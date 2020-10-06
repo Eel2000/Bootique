@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="Bootique.MainPage">
+
+    <NavigationPage.HasNavigationBar>false</NavigationPage.HasNavigationBar>
+    
+    
+
+    <StackLayout BackgroundColor="Black">
+        <Frame  Padding="0" 
+                Margin="0,-35,0,0" 
+                CornerRadius="35"
+                HeightRequest="355" 
+                WidthRequest="355" 
+                HasShadow="True" 
+                BackgroundColor="#40a7c5" 
+                IsClippedToBounds="True">
+            
+            <Grid VerticalOptions="CenterAndExpand" 
+                  HorizontalOptions="CenterAndExpand">
+                <Image Source="Ambulance.png" 
+                       Aspect="Fill"/>
+            </Grid>
+        </Frame>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="1" 
+                         Orientation="Horizontal" 
+                         HorizontalOptions="EndAndExpand" 
+                         Padding="0">
+                <ImageButton x:Name="BtnInfo" 
+                             Source="info1.png" 
+                             CornerRadius="50" 
+                             Aspect="Fill" 
+                             BackgroundColor="Black"
+                             Command="{Binding AboutPageCommand}"/>
+
+                <ImageButton x:Name="BtnAbout" 
+                             Source="option.png" 
+                             CornerRadius="50" 
+                             Aspect="Fill" 
+                             BackgroundColor="Black"
+                             Command="{Binding OptionPageCommand}"/>
+            </StackLayout>
+        </Grid>
+
+        <Grid VerticalOptions="CenterAndExpand">
+            <forms:AnimationView x:Name="pulse"
+                                 Animation="16827-pulse-error.json"
+                                 AutoPlay="True"
+                                 HeightRequest="300"
+                                 WidthRequest="300"
+                                 RepeatMode="Infinite"
+                                 RepeatCount="3"
+                                 IsVisible="True"
+                                 AnimationSource="AssetOrBundle"
+                                  HorizontalOptions="Center" 
+                                  VerticalOptions="Center" 
+                                 />
+            
+            <Button x:Name="BtnCall" 
+                    CornerRadius="100" 
+                    ImageSource="Bell.png" 
+                    BackgroundColor="DarkRed"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center" 
+                    HeightRequest="100"  
+                    WidthRequest="100"
+                    Command="{Binding AlertCommand}"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

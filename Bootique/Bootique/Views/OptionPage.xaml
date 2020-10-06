@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:customerenderer="clr-namespace:Bootique.CustomeRenderer" 
+             xmlns:viewmodels="clr-namespace:Bootique.ViewModels"
+             x:Class="Bootique.Views.OptionPage">
+    <!--<ContentPage.BackgroundImageSource>road.png</ContentPage.BackgroundImageSource>-->
+    <StackLayout BackgroundColor="White">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Back" FontFamily="serif" BackgroundColor="White"
+                        Command="{Binding BackCommand}"/>
+            </Grid>
+
+            <StackLayout Grid.Row="1">
+                <Label Text="Preference" VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="Center" FontFamily="serif" FontSize="20"/>
+
+                <Grid Padding="20" RowSpacing="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <customerenderer:CustomEntry Placeholder="Nom" Grid.Row="0"/>
+
+                    <customerenderer:CustomEntry Placeholder="Post-nom" Grid.Row="1"/>
+
+                    <customerenderer:CustomEntry Placeholder="Prenom" Grid.Row="2"/>
+
+                    <customerenderer:CustomEntry Placeholder="Sexe" Grid.Row="3"/>
+
+                    <customerenderer:CustomEntry Placeholder="Age" Grid.Row="4" Keyboard="Numeric"/>
+
+                    <customerenderer:CustomEntry Placeholder="Groupe Sanguin" Grid.Row="5"/>
+
+                    <StackLayout Orientation="Horizontal" Grid.Row="6" Spacing="1">
+                        <CheckBox Color="Black" IsTabStop="True"/>
+                        <Label Text="Garder cette Position" VerticalOptions="Center" TextColor="Black"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </Grid>
+
+        <Button Text="Valider" HorizontalOptions="Center" VerticalOptions="Center"
+                BackgroundColor="#5DEBBF" CornerRadius="15" Command="{Binding ValiderCommand}"/>
+    </StackLayout>
+
+</ContentPage>
